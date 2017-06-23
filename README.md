@@ -2,7 +2,7 @@
 
 This simulator provides students with a real challenge of being a self driving engineer at Kiwi data science division.
 
-### Avaliable Game Builbs (Precompiled builds of the simulator)
+### Available Game Builbs (Precompiled builds of the simulator)
 
 Instructions: Download the zip file, extract it and run (see How to Run) the execution file.
 
