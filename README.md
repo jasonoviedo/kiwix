@@ -126,3 +126,8 @@ A server.py and NeuronalNetwork.py is provided to give you a mock up to guide yo
 Project by: [Carlos Zubieta](https://www.linkedin.com/in/carlos-zubieta-52217875/), [Jason Oviedo](https://www.linkedin.com/in/jason-oviedo-46611914/), and [David Cardozo](https://www.linkedin.com/in/davidcardozo/).
 
 Kiwi Campus 2017
+
+
+# Copyright
+
+ © Kiwi Campus 2017
