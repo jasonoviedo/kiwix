@@ -10,18 +10,19 @@ Instructions: Download the zip file, extract it and run (see How to Run) the exe
 
 Version alpha, 6/21/17
 
-### [Linux](https://drive.google.com/open?id=0BwDN7B4kVM12SnBYWVp2NXJoeHc)
+### [Linux](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_LinuxUniversal.rar)
 
-### [Mac](https://drive.google.com/open?id=0BwDN7B4kVM12S1otYm1yN2JIbmM)
+### [Mac](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_Mac.app.zip)
 
-### [Windows](https://drive.google.com/open?id=0BwDN7B4kVM12VFZwN21lb21hRDA)
+### [Windows](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_win64.rar)
 
+### **Releases on** [Link](https://github.com/Davidnet/kiwix/releases)
 
 ### How to run
 
 #### Linux
 
-In [Linux](https://drive.google.com/open?id=0BwDN7B4kVM12SnBYWVp2NXJoeHc) the zip file contains two [ELF files](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) that for security reasons are not marked to be executable. To give a file a executable flag the procedure is
+In [Linux](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_LinuxUniversal.rar) the zip file contains two [ELF files](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) that for security reasons are not marked to be executable. To give a file a executable flag the procedure is
 
 ```bash
 $ chmod a+x file
@@ -42,11 +43,11 @@ $ ./file
 
 #### Mac
 
-In [Mac](https://drive.google.com/open?id=0BwDN7B4kVM12S1otYm1yN2JIbmM) a single app package is provided, is independent of the architecture. Any problem, please submit a issue report to this repository.
+In [Mac](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_Mac.app.zip) a single app package is provided, is independent of the architecture. Any problem, please submit a issue report to this repository.
 
 #### Windows
 
-In [Windows](https://drive.google.com/open?id=0BwDN7B4kVM12VFZwN21lb21hRDA) only a 64 bit version is provided, if you are interested on a 32 build, please open an issue on the issue tracker.
+In [Windows](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_win64.rar) only a 64 bit version is provided, if you are interested on a 32 build, please open an issue on the issue tracker.
 
 ### General Recommendations
 
