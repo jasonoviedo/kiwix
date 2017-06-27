@@ -10,9 +10,11 @@ Instructions: Download the zip file, extract it and run (see How to Run) the exe
 
 Version alpha, 6/21/17
 
-[Linux](https://drive.google.com/open?id=0BwDN7B4kVM12SnBYWVp2NXJoeHc)
-[Mac](https://drive.google.com/open?id=0BwDN7B4kVM12S1otYm1yN2JIbmM)
-[Windows](https://drive.google.com/open?id=0BwDN7B4kVM12VFZwN21lb21hRDA)
+### [Linux](https://drive.google.com/open?id=0BwDN7B4kVM12SnBYWVp2NXJoeHc)
+
+### [Mac](https://drive.google.com/open?id=0BwDN7B4kVM12S1otYm1yN2JIbmM)
+
+### [Windows](https://drive.google.com/open?id=0BwDN7B4kVM12VFZwN21lb21hRDA)
 
 
 ### How to run
@@ -22,7 +24,7 @@ Version alpha, 6/21/17
 In [Linux](https://drive.google.com/open?id=0BwDN7B4kVM12SnBYWVp2NXJoeHc) the zip file contains two [ELF files](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) that for security reasons are not marked to be executable. To give a file a executable flag the procedure is
 
 ```bash
-chmod a+x file
+$ chmod a+x file
 ```
 A short summary of `chmod` can be found on the man pages using `man chmod` or on the [web](https://explainshell.com/explain?cmd=chmod+a%2Bx+file).
 Be sure to choose the corresponding architecture of your OS.
@@ -31,6 +33,12 @@ Be sure to choose the corresponding architecture of your OS.
 | ----   |:------------------------:|
 | x86    | 32 Bit OS                |
 | x86-64 | 64 Bit OS                |
+
+After giving the executable bits to the file, recall that for executing the file, use
+```bash
+$ ./file
+```
+
 
 #### Mac
 
@@ -71,46 +79,42 @@ The possible values are on the range:
 
 | Value   | Range |
 | ----   |:------------------------:|
-| Steering   | TBA               |
-| throttle  | TBA                |
+| Steering   |  {-1,1}                |
+| throttle  | {-1,1}                |
 
 
 
 
-# Conda Enviroment Kiwi Enviroment
+# Conda Kiwi Enviroment
 
-We suggest (not a requirement) to use the following conda environments so you can start building your own AutoPilot on python.
+Conda is a package manager application that quickly installs, runs, and updates packages and their dependencies. Conda is also an environment manager application. A conda environment is a directory that contains a specific collection of conda packages
 
 
-TODO explain conda and how to set up a new enviroment.
+We suggest (not a requirement) to use the following conda environments so you can start as soon as possible to build your own AutoPilot on python.
 
-### Linux
+
+### Linux (ONLY CPU)
+
+```
+$ conda env create -f environment_linux_nogpu.yml
+```
+Main packages provided: Tensorflow with GPU support, Keras and OpenCV.
+
+
+### Linux (GPU with CUDA ENABLED)
 
 ```bash
-conda env create -f enviroment.yml
+$ conda env create -f environment_linux_gpu.yml
 ```
 
-
-
+Main packages provided: Tensorflow with GPU support, Keras and OpenCV.
 
 
 # Kiwi Auto Pilot
 
-The Kiwi Auto Pilot is a minimalist project completly based on  a strip down version of [Donkey](https://github.com/wroscoe/donkey)
+The Kiwi Auto Pilot is a minimalist project completely based on  a strip down version of [Donkey](https://github.com/wroscoe/donkey)
 written by night-selfdriver [Will Roscoe](https://github.com/wroscoe)
 
-## Instructions to train
-
-TBA
-
-TODO: Export
-
-Donkey instructions TBA
-
-## Instructions to SelfDriving
-
-TBA
-
-Do we add a SelfDriving Pilot?
+A server.py and NeuronalNetwork.py is provided to give you a mock up to guide you.
 
 ![Kiwibot](./KIWIBOT.png)
