@@ -118,3 +118,10 @@ written by night-selfdriver [Will Roscoe](https://github.com/wroscoe)
 A server.py and NeuronalNetwork.py is provided to give you a mock up to guide you.
 
 ![Kiwibot](./KIWIBOT.png)
+
+# Contributors
+
+
+Project by: [Carlos Zubieta](https://www.linkedin.com/in/carlos-zubieta-52217875/), [Jason Oviedo](https://www.linkedin.com/in/jason-oviedo-46611914/), and [David Cardozo](https://www.linkedin.com/in/davidcardozo/).
+
+Kiwi Campus 2017
