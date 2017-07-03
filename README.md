@@ -4,6 +4,14 @@ This simulator provides students with a real challenge of being a self driving e
 
 ![KiwiBot Challenge](./Challenge.png)
 
+
+### Objectives
+
+Two tracks (easy track and dangerous curves track) are provided to get your started on using machine learning algorithms and get a feeling of the API.
+
+Your objective is train a model on which a kiwibot is able to move autonomously along the city without hitting pedestrians or hitting a building, each model provided will be evaluated and we will be looking for the model with the most autonomous time without crashing.
+
+
 ### Available Game Builds (Precompiled builds of the simulator)
 
 Instructions: Download the zip file, extract it and run (see How to Run) the execution file.
