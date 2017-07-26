@@ -11,13 +11,15 @@ Two tracks, easy track and dangerous curves, are provided to you so you can get 
 
 Your main objective is to guide a kiwibot to move autonomously from a food supply point to a delivery point. You are free to choose any method you want, but you are scored on the autopilot mode, and you should be able to provide an environment for us to test.
 
+**Please play with the menu provided in the game, it can give you an overview of all the settings that are customizable**
+
 ## Score Calculation
 
 A simple is score is calculated as follows:
 ```
 float k1 = minDistance / (float)(Mathf.Max(minDistance,(robotDistance + pilotDistance)));
        float k2 = Mathf.Sqrt(Mathf.Max( 1, pilotDistance));
-       int score = (int)(((MAXSCORE * k1) / k2) - (crash * 60));
+       int score = (int)(((MAXSCORE * k1) / k2) - (crah * 60));
 ```
 On which `minDistance` is the shortest distance between the food supply and the provided delivery point.
 
@@ -36,7 +38,7 @@ Version alpha, 6/21/17
 ### [Windows](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-windows-desktop-64-bit-35/Default%20Windows%20desktop%2064-bit.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091629&Signature=FOmUcExdYSsPaxrcKOXdUHI2n%2B4%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-windows-desktop-64-bit-35.zip&response-content-type=application%2Foctet-stream)
 
 ### **Releases on** [Link](https://github.com/Davidnet/kiwix/releases)
-
+http://caffe.berkeleyvision.org/
 ### How to run
 
 #### Linux
@@ -74,6 +76,8 @@ Is recommendable that if you don't have a GPU available on your system, please r
 
 ### General Controls
 
+A mapping of the keyboard can be found on the settings menu, you can even use any joystick provided you OS can support it.
+
 You can use any joystick supported by your OS, in the keyboard the following controls are provided (standard wasd mapping):
 
 | keyboard   | Action |
@@ -87,7 +91,15 @@ You can use any joystick supported by your OS, in the keyboard the following con
 
 ### AutoPilot Communication
 
-As you can observe in the communication tab, you can select a port, IP address to send images at a customizable size. A server script **is not required to use** is provided to give you a sketch to work on.
+
+
+As you can observe in the communication tab, you can select a port, IP address to send images at a customizable size.
+
+We send the images on a hex string over a socket, the communication sends strings of hex values that needs to be converted to a byteArray object representing the image (see the server.py)
+
+We provide to you a simple python script to communicate (**is not required to be used**)
+
+A server script **is not required to use** is provided to give you a sketch to work on.
 
 The program is accepting the following format (example in python provided):
 
@@ -107,35 +119,47 @@ The possible values are on the range:
 
 # Conda Kiwi Enviroment
 
-Conda is a package manager application that quickly installs, runs, and updates packages and their dependencies. Conda is also an environment manager application. A conda environment is a directory that contains a specific collection of conda packages
+Conda is a package manager application that quickly installs, runs, and updates packages and their dependencies. Conda is also an environment manager application. A Conda environment is a directory that contains a specific collection of Conda packages
 
 
-We suggest (not a requirement) to use the following conda environments so you can start as soon as possible to build your own AutoPilot on python.
+We suggest (not a requirement) to use the following Conda environments so you can start as soon as possible to build your own AutoPilot on python.
+
+## Installation
 
 
-### Linux (ONLY CPU)
+See [Anaconda](https://www.continuum.io/downloads)
+
+Be sure to add, either saying yes on the installation menu or adding to your profile file (e.g bash.rc, .profile ... etc).
+
+
+### Anaconda Usage
+
+We provide to you with Conda environments included with Tensorflow and OpenCV (which can be useful for the hardest level)
+
+### Linux
 
 ```
-$ conda env create -f environment_linux_nogpu.yml
+$ conda env create -f kiwix_linux.yml
 ```
-Main packages provided: Tensorflow with GPU support, Keras and OpenCV.
+Main packages provided: Tensorflow with GPU support and OpenCV. These environment has also Jupyter (which can be useful for visualization and writing python code), and scipy which can be useful for writing basic models of machine learning algorithms.
 
+### Mac
 
-### Linux (GPU with CUDA ENABLED)
+TBA
 
-```bash
-$ conda env create -f environment_linux_gpu.yml
-```
+### Windows
 
-Main packages provided: Tensorflow with GPU support, Keras and OpenCV.
+TBA
 
+### Recommendations
 
-# Kiwi Auto Pilot
+There are many tools and configurations that can be useful for developing the solution, examples includes:
 
-The Kiwi Auto Pilot is a minimalist project completely based on  a strip down version of [Donkey](https://github.com/wroscoe/donkey)
-written by night-selfdriver [Will Roscoe](https://github.com/wroscoe)
+[Keras](https://keras.io/)
+[Caffe](http://caffe.berkeleyvision.org/)
 
-A server.py and NeuronalNetwork.py is provided to give you a mock up to guide you.
+May the force be with you
+
 
 ![Kiwibot](./KIWIBOT.png)
 
