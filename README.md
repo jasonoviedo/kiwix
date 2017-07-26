@@ -7,10 +7,9 @@ This simulator provides students with a real challenge of being a self driving e
 
 ### Objectives
 
-Two tracks (easy track and dangerous curves track) are provided to get your started on using machine learning algorithms and get a feeling of the API.
+(TODO: Rexplain the new menu) Two tracks (easy track and dangerous curves track) are provided to get your started on using machine learning algorithms and get a feeling of the API.
 
-Your objective is train a model on which a kiwibot is able to move autonomously along the city without hitting pedestrians or hitting a building, each model provided will be evaluated and we will be looking for the model with the most autonomous time without crashing.
-
+Your objective is to provide a solution, using your knowlege adquired during the curse, to put a kiwibot on fully autonomous service, i.e prove a kiwibot with a method of running the streets without crashing and make a route of getting from point A to point B.
 
 ### Available Game Builds (Precompiled builds of the simulator)
 
@@ -18,11 +17,11 @@ Instructions: Download the zip file, extract it and run (see How to Run) the exe
 
 Version alpha, 6/21/17
 
-### [Linux](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_LinuxUniversal.rar)
+### [Linux](https://developer.cloud.unity3d.com/share/bye6EruQtz/)
 
-### [Mac](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_Mac.app.zip)
+### [Mac](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-mac-desktop-universal-33/Default%20Mac%20desktop%20Universal.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091431&Signature=dN%2Fs0gKhB8DjpMxYZTCrCIKtTxs%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-mac-desktop-universal-33.zip&response-content-type=application%2Foctet-stream)
 
-### [Windows](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_win64.rar)
+### [Windows](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-windows-desktop-64-bit-35/Default%20Windows%20desktop%2064-bit.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091629&Signature=FOmUcExdYSsPaxrcKOXdUHI2n%2B4%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-windows-desktop-64-bit-35.zip&response-content-type=application%2Foctet-stream)
 
 ### **Releases on** [Link](https://github.com/Davidnet/kiwix/releases)
 
@@ -30,7 +29,7 @@ Version alpha, 6/21/17
 
 #### Linux
 
-In [Linux](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_LinuxUniversal.rar) the zip file contains two [ELF files](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) that for security reasons are not marked to be executable. To give a file a executable flag the procedure is
+In [Linux](https://developer.cloud.unity3d.com/share/bye6EruQtz/) the zip file contains two [ELF files](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) that for security reasons are not marked to be executable. To give a file a executable flag the procedure is
 
 ```bash
 $ chmod a+x file
@@ -51,11 +50,11 @@ $ ./file
 
 #### Mac
 
-In [Mac](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_Mac.app.zip) a single app package is provided, is independent of the architecture. Any problem, please submit a issue report to this repository.
+In [Mac](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-mac-desktop-universal-33/Default%20Mac%20desktop%20Universal.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091431&Signature=dN%2Fs0gKhB8DjpMxYZTCrCIKtTxs%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-mac-desktop-universal-33.zip&response-content-type=application%2Foctet-stream) a single app package is provided, is independent of the architecture. Any problem, please submit a issue report to this repository.
 
 #### Windows
 
-In [Windows](https://github.com/Davidnet/kiwix/releases/download/v0.1/KiwiGame_win64.rar) only a 64 bit version is provided, if you are interested on a 32 build, please open an issue on the issue tracker.
+In [Windows](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-windows-desktop-64-bit-35/Default%20Windows%20desktop%2064-bit.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091629&Signature=FOmUcExdYSsPaxrcKOXdUHI2n%2B4%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-windows-desktop-64-bit-35.zip&response-content-type=application%2Foctet-stream) only a 64 bit version is provided, if you are interested on a 32 build, please open an issue on the issue tracker.
 
 ### General Recommendations
 
