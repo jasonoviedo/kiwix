@@ -95,11 +95,13 @@ You can use any joystick supported by your OS, in the keyboard the following con
 
 As you can observe in the communication tab, you can select a port, IP address to send images at a customizable size.
 
-We send the images on a hex string over a socket, the communication sends strings of hex values that needs to be converted to a byteArray object representing the image (see the server.py)
+We send the images on a hex string over a socket, the communication sends strings of hex values that needs to be converted to a byteArray object representing the image (see the server.py). Observation: Read until a colon is found. This signals the image size segment.
 
-A server script **is not requirement to use** is provided to give you a sketch to work on and give you an overview of how the communication is done **[server.py](server.py)**
+A server script **which is not a requirement to use** is provided to give you a sketch to work on and give you an overview of how the communication is done **[server.py](server.py)**
 
 Requirements: [Pillow](http://pillow.readthedocs.io/en/4.2.x/)
+
+A requirements.txt is provided.
 
 
 ### Sending commands to the kiwibot:
