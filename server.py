@@ -1,99 +1,84 @@
+import socket
+from PIL import Image
 import io
 import os
-import socket
-
-from PIL import Image
-
-from scripts import NeuralNetwork as nn
-
-virtual_pilot = None
-
-def stringToByte(hex):
-
-    return bytearray.fromhex(hex)
-
-def neural_network_output():
-
-    img_arr = nn.load_frame('test.jpg')
-    x,y = virtual_pilot.decide(img_arr)
-    return x,y
 
 
-def Serve():
+def string_to_byte(hex_input):
+
+    return bytearray.fromhex(hex_input)
+
+
+def serve():
     host = ""
-    port = 5000
+    port = 5001
 
-    mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    mySocket.bind((host, port))
+    my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    my_socket.bind((host, port))
 
-    mySocket.listen(1)
-    conn, addr = mySocket.accept()
-    decodedDataBuffer = ""
-    decodedData = ""
-    remainder = ""
-    print("Connection from: " + str(addr))
-    imageCount = 0
+    my_socket.listen(1)
+    conn, address = my_socket.accept()
+    decoded_data_buffer = ""
+    decoded_data = ""
+    print("Connection from: " + str(address))
 
-    # Keep on reading 'till the program finishes
+    # Keep on reading untill the program finishes
     while True:
         img = None
 
         # Read until a colon is found. This signals the image size segment
-        while not ":" in decodedData:
+        while not ":" in decoded_data:
             data = conn.recv(1)
-            decodedData = data.decode()
-            decodedDataBuffer += decodedData
+            decoded_data = data.decode()
+            decoded_data_buffer += decoded_data
 
         print("Config received: ")
-        print(decodedDataBuffer)
+        print(decoded_data_buffer)
 
-        expectedSizeStr = decodedDataBuffer.replace("config", "").replace(",", "").replace(":", "")
-        expectedSize = int(expectedSizeStr)
-        print("Expected hex bytes: ", expectedSize)
+        expected_size_str = decoded_data_buffer.replace("config", "").replace(",", "").replace(":", "")
+        expected_size = int(expected_size_str)
+        print("Expected hex bytes: ", expected_size)
 
-        decodedDataBuffer = ""
+        decoded_data_buffer = ""
         hexBytesCount = 0
 
         # Read the amount of hex chars indicated before
         while True:
-            missingBytes = expectedSize - hexBytesCount
-            data = conn.recv(missingBytes if missingBytes < 1024 else 1024)
+            missing_bytes = expected_size - hexBytesCount
+            data = conn.recv(missing_bytes if missing_bytes < 1024 else 1024)
             if not data:
                 break
 
-            print("Read ", hexBytesCount, " out of ", expectedSize)
-            lastReadSize = len(data)
-            hexBytesCount += lastReadSize
+            print("Read ", hexBytesCount, " out of ", expected_size)
+            last_read_size = len(data)
+            hexBytesCount += last_read_size
 
-            decodedData = data.decode()
-            decodedDataBuffer += decodedData
+            decoded_data = data.decode()
+            decoded_data_buffer += decoded_data
 
-            if hexBytesCount >= expectedSize:
+            if hexBytesCount >= expected_size:
                 break # We are done!
 
-        print("Read hex bytes: ", len(decodedDataBuffer))
+        print("Read hex bytes: ", len(decoded_data_buffer))
 
-        imageBytes = stringToByte(decodedDataBuffer)
-        print("Read bytes: ", len(imageBytes))
+        image_bytes = string_to_byte(decoded_data_buffer)
+        print("Read bytes: ", len(image_bytes))
 
-        img = Image.open(io.BytesIO(bytes(imageBytes)))
-        imageCount += 1
+        img = Image.open(io.BytesIO(bytes(image_bytes)))
         imageName = "test" + ".jpg"
         img.save(imageName)
         print("Saved image: ", imageName)
 
-        decodedDataBuffer = ""
-        decodedData = ""
-        # datasend = str("Steering-0,throtle-1").upper()
-        # print ("sending: " + str(datasend))
-        # conn.send(datasend.encode())
+        decoded_data_buffer = ""
+        decoded_data = ""
 
-        steering, throttle = neural_network_output()
+        steering, throttle = (0,0)  # TODO: Plug your designed algorithm here.
 
         os.remove('test.jpg')
 
         reply = '{ "steering" : "%f", "throttle" : "%f" }' % (steering, throttle)
         reply = reply + '\n'
+        print(reply)
         reply = reply.encode()
         conn.send(reply )
 
@@ -104,7 +89,5 @@ def Serve():
 
 
 if __name__ == '__main__':
-    print("Loading the default Neural Network")
-    virtual_pilot = nn.prepare_neural_network()
     print("Server Start")
-    Serve()
+    serve()

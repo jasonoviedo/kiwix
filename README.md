@@ -11,6 +11,19 @@ Two tracks, easy track and dangerous curves, are provided to you so you can get 
 
 Your main objective is to guide a kiwibot to move autonomously from a food supply point to a delivery point. You are free to choose any method you want, but you are scored on the autopilot mode, and you should be able to provide an environment for us to test.
 
+## Score Calculation
+
+A simple is score is calculated as follows:
+```
+float k1 = minDistance / (float)(Mathf.Max(minDistance,(robotDistance + pilotDistance)));
+       float k2 = Mathf.Sqrt(Mathf.Max( 1, pilotDistance));
+       int score = (int)(((MAXSCORE * k1) / k2) - (crash * 60));
+```
+On which `minDistance` is the shortest distance between the food supply and the provided delivery point.
+
+Observe that is not a requirement to do the whole circuit in autopilot, but you are severely penalized for spending too much time on manual mode.
+
+
 ### Available Game Builds (compiled builds of the simulator)
 
 Instructions: Download the zip file, extract it and run (see How to Run) the execution file.
@@ -74,7 +87,7 @@ You can use any joystick supported by your OS, in the keyboard the following con
 
 ### AutoPilot Communication
 
-As you can observe in the communication tab, you can select a port, IP address to send images at a customizable size. A server script (TODO) is provided to give you a sketch to work on.
+As you can observe in the communication tab, you can select a port, IP address to send images at a customizable size. A server script **is not required to use** is provided to give you a sketch to work on.
 
 The program is accepting the following format (example in python provided):
 
