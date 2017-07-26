@@ -7,16 +7,15 @@ This simulator provides students with a real challenge of being a self driving e
 
 ### Objectives
 
-(TODO: Rexplain the new menu) Two tracks (easy track and dangerous curves track) are provided to get your started on using machine learning algorithms and get a feeling of the API.
+Two tracks, easy track and dangerous curves, are provided to you so you can get familiarized with the communications protocols of the game, also you can test any machine learning implementation or computer vision approach which can be helpful on the city challenge
 
-Your objective is to provide a solution, using your knowlege adquired during the curse, to put a kiwibot on fully autonomous service, i.e prove a kiwibot with a method of running the streets without crashing and make a route of getting from point A to point B.
+Your main objective is to guide a kiwibot to move autonomously from a food supply point to a delivery point. You are free to choose any method you want, but you are scored on the autopilot mode, and you should be able to provide an environment for us to test.
 
-### Available Game Builds (Precompiled builds of the simulator)
+### Available Game Builds (compiled builds of the simulator)
 
 Instructions: Download the zip file, extract it and run (see How to Run) the execution file.
 
 Version alpha, 6/21/17
-
 ### [Linux](https://developer.cloud.unity3d.com/share/bye6EruQtz/)
 
 ### [Mac](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-mac-desktop-universal-33/Default%20Mac%20desktop%20Universal.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091431&Signature=dN%2Fs0gKhB8DjpMxYZTCrCIKtTxs%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-mac-desktop-universal-33.zip&response-content-type=application%2Foctet-stream)
