@@ -31,19 +31,19 @@ Observe that is not a requirement to do the whole circuit in autopilot, but you 
 Instructions: Download the zip file, extract it and run (see How to Run) the execution file.
 
 Version alpha, 6/21/17
-### [Linux](https://developer.cloud.unity3d.com/share/bye6EruQtz/)
+### [Linux](https://github.com/Davidnet/kiwix/releases/download/v1.0/Linuxuniversal-kiwicampus-challenge.zip)
 
-### [Mac](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-mac-desktop-universal-33/Default%20Mac%20desktop%20Universal.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091431&Signature=dN%2Fs0gKhB8DjpMxYZTCrCIKtTxs%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-mac-desktop-universal-33.zip&response-content-type=application%2Foctet-stream)
+### [Mac](https://github.com/Davidnet/kiwix/releases/download/v1.0/Macuniversal-kiwicampus-challenge.zip)
 
-### [Windows](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-windows-desktop-64-bit-35/Default%20Windows%20desktop%2064-bit.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091629&Signature=FOmUcExdYSsPaxrcKOXdUHI2n%2B4%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-windows-desktop-64-bit-35.zip&response-content-type=application%2Foctet-stream)
+### [Windows](https://github.com/Davidnet/kiwix/releases/download/v1.0/Windows64-kiwicampus-challenge.zip)
 
 ### **Releases on** [Link](https://github.com/Davidnet/kiwix/releases)
-http://caffe.berkeleyvision.org/
+
 ### How to run
 
 #### Linux
 
-In [Linux](https://developer.cloud.unity3d.com/share/bye6EruQtz/) the zip file contains two [ELF files](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) that for security reasons are not marked to be executable. To give a file a executable flag the procedure is
+In [Linux](https://github.com/Davidnet/kiwix/releases/download/v1.0/Linuxuniversal-kiwicampus-challenge.zip) the zip file contains two [ELF files](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) that for security reasons are not marked to be executable. To give a file a executable flag the procedure is
 
 ```bash
 $ chmod a+x file
@@ -64,11 +64,11 @@ $ ./file
 
 #### Mac
 
-In [Mac](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-mac-desktop-universal-33/Default%20Mac%20desktop%20Universal.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091431&Signature=dN%2Fs0gKhB8DjpMxYZTCrCIKtTxs%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-mac-desktop-universal-33.zip&response-content-type=application%2Foctet-stream) a single app package is provided, is independent of the architecture. Any problem, please submit a issue report to this repository.
+In [Mac](https://github.com/Davidnet/kiwix/releases/download/v1.0/Macuniversal-kiwicampus-challenge.zip) a single app package is provided, is independent of the architecture. Any problem, please submit a issue report to this repository.
 
 #### Windows
 
-In [Windows](https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/4672967344170/820117d8-a298-419d-a5f1-a0b9efb7eff9/default-windows-desktop-64-bit-35/Default%20Windows%20desktop%2064-bit.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1501091629&Signature=FOmUcExdYSsPaxrcKOXdUHI2n%2B4%3D&response-content-disposition=attachment%3B%20filename%3Dkiwicampus-kiwibot-simulation-default-windows-desktop-64-bit-35.zip&response-content-type=application%2Foctet-stream) only a 64 bit version is provided, if you are interested on a 32 build, please open an issue on the issue tracker.
+In [Windows](https://github.com/Davidnet/kiwix/releases/download/v1.0/Windows64-kiwicampus-challenge.zip) only a 64 bit version is provided, if you are interested on a 32 build, please open an issue on the issue tracker.
 
 ### General Recommendations
 
@@ -97,9 +97,12 @@ As you can observe in the communication tab, you can select a port, IP address t
 
 We send the images on a hex string over a socket, the communication sends strings of hex values that needs to be converted to a byteArray object representing the image (see the server.py)
 
-We provide to you a simple python script to communicate (**is not required to be used**)
+A server script **is not requirement to use** is provided to give you a sketch to work on and give you an overview of how the communication is done **[server.py](server.py)**
 
-A server script **is not required to use** is provided to give you a sketch to work on.
+Requirements: [Pillow](http://pillow.readthedocs.io/en/4.2.x/)
+
+
+### Sending commands to the kiwibot:
 
 The program is accepting the following format (example in python provided):
 
@@ -129,7 +132,7 @@ We suggest (not a requirement) to use the following Conda environments so you ca
 
 See [Anaconda](https://www.continuum.io/downloads)
 
-Be sure to add, either saying yes on the installation menu or adding to your profile file (e.g bash.rc, .profile ... etc).
+Be sure to add anaconda/bin to the PATH, either saying yes on the installation menu or adding to your profile file (e.g bash.rc, .profile ... etc).
 
 
 ### Anaconda Usage
@@ -156,6 +159,7 @@ TBA
 There are many tools and configurations that can be useful for developing the solution, examples includes:
 
 [Keras](https://keras.io/)
+
 [Caffe](http://caffe.berkeleyvision.org/)
 
 May the force be with you
